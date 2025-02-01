@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>blog-app</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="wrapper">
+            <form action="#" class="createPost-form">
+                <p class="info-text">Новый пост</p>
+                <input class="write__title" type="text" placeholder="Заголовок">
+                <textarea class="write__post" type="text" placeholder="Напиши пост"></textarea>
+                <button class="createPost" type="button">Опубликовать</button>
+            </form>
+            <div class="wrapper__renderBox">
+                <p class="info-text">Лента</p>
+                <ul class="post-lists">
+                    <span class="post-text">Здесь пока пусто...</span>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
