@@ -9,9 +9,11 @@ const posts = {};
 
 buttonNode.addEventListener('click', () => {
     const {title, post} = getMessage(writeTitleNode, writePostNode);
-    saveMessage(posts, title, post);
-    getTime();
-    renderMessage(posts);
+    if(checkLengthTitle(title) && checkLengthPost(post)){
+        saveMessage(posts, title, post);
+        getTime();
+        renderMessage(posts);
+    };
 });
 
 function getMessage(titleNode, postNode){
@@ -20,7 +22,27 @@ function getMessage(titleNode, postNode){
         post: postNode.value,
     };
 };
+function checkLengthTitle(title){
+    if(title.length < 100){
+        return true;
+    }else{
+        const lengthError = document.createElement('p');
+        lengthError.className = 'error';
+        lengthError.textContent = 'Длина заголовка не должна превышать 100 символов';
+        writeTitleNode.after(lengthError);
+    };
+};
 
+function checkLengthPost(post){
+    if(post.length < 200){
+        return true;
+    }else{
+        const lengthError = document.createElement('p');
+        lengthError.className = 'error';
+        lengthError.textContent = 'Длина поста не должна превышать 200 символов';
+        writePostNode.after(lengthError);
+    };
+};
 function saveMessage(obj, title, post){
     obj.title = title;
     obj.post = post;
