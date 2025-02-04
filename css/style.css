@@ -14,12 +14,12 @@ body{
     max-width: 1130px;
     margin: 0 auto;
     padding: 0px 0.937rem;
+    word-break: break-word;
 }
 .wrapper{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 3.43rem;
 }
 .createPost-form{
     display: flex;
@@ -29,7 +29,7 @@ body{
     font-size: var(--font-size-title);
     color: var(--color);
     line-height: var(--line-height-form);
-    margin-bottom: 3.43rem;
+    margin-block: 3.43rem;
 }
 
 .write__title{
