@@ -18,6 +18,7 @@ body{
 .wrapper{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 3.43rem;
 }
 .createPost-form{
@@ -67,11 +68,11 @@ body{
 }
 
 .render__title{
-    font-size: var(--font-size-title);
-    margin-bottom: 1.25rem;
+    white-space: normal;
 }
 .render__post{
-    font-size: var(--font-size-text);
+    white-space: normal;
+    margin-block: 1rem;
 }
 .post{
     margin-block: 2.5rem;
@@ -88,14 +89,11 @@ body{
     font-size: var(--font-size-text);
     line-height: 1.875rem;
 }
-.wrapper__renderBox{
-    max-width: 500px;
-}
 .error{
     display: none;
     color: red;
 }
-@media (max-width: 980px){
+@media (max-width: 768px){
     :root{
         --font-size-text: 1.562rem;
         --font-size-title: 1.5rem;
@@ -106,52 +104,37 @@ body{
         --line-height-form: 2rem;
     }
     .container{
-        max-width: 950px;
+        width: 100%;
         margin: 0 auto;
         padding: 0px 0.937rem;
     }
     .info-text{
-        font-size: var(--font-size-title);
-        color: var(--color);
-        line-height: var(--line-height-form);
+        width: 100%;
         margin-bottom: 3.43rem;
+    }
+    .createPost-form, .wrapper__renderBox{
+        width: 100%;
     }
     
     .write__title{
         height: 40px;
-        border-radius: var(--border-radius);
-        border: var(--border);
-        font-size: var(--font-size-title);
-        line-height: var(--line-height-form);
-        outline: none;
         padding: 15px;
     }
     .write__post{
         resize: none;
         height: 180px;
-        border-radius: var(--border-radius);
-        font-size: var(--font-size-title);
-        border: var(--border);
         margin-block: 30px;
-        line-height: var(--line-height-form);
-        outline: none;
         padding: 1.25rem;
     }
     .createPost{
-        background-color: #0094FF;
         height: 40px;
-        font-size: var(--font-size-title);
-        line-height: var(--line-height-form);
-        border-radius: var(--border-radius);
     }
     .render__title{
         font-size: var(--font-size-title);
         margin-bottom: 1rem;
-        word-wrap: break-word;
     }
     .render__post{
         font-size: var(--font-size-text);
-        word-wrap: break-word;
     }
     .post{
         width: 100%;
@@ -170,14 +153,43 @@ body{
         line-height: 1rem;
     }
     .wrapper__renderBox{
-        max-width: 50%;
+        width: 100%;
     }
 }
 
 @media (max-width: 600px){
+    :root{
+        --font-size-text: 1rem;
+        --font-size-title: 1rem;
+        --color: #000000;
+        --border-radius: 0.200rem;
+        --title-weight: 700;
+        --border: 0.0625rem solid #000000;
+        --line-height-form: 1rem;
+    }
     .container{
         max-width: 570px;
         margin: 0 auto;
         padding: 0px 0.937rem;
+    }
+    .info-text{
+        width: 100%;
+        margin-bottom: 2.3rem;
+    }
+    .write__title{
+        height: 30px;
+    }
+    .write__post{
+        height: 130px;
+        margin-block: 15px;
+        padding: 1rem;
+    }
+    .render__title{
+        font-size: var(--font-size-title);
+        margin-bottom: 1rem;
+
+    }
+    .render__post{
+        font-size: var(--font-size-text);
     }
 }
